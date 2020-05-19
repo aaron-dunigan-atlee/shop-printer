@@ -1,0 +1,20 @@
+<?
+    var jobs = getActiveJobs();
+?>
+
+<div class="container-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col main-menu-col py-4">
+                <div class="row">
+
+                  <? for (var i=0; i<jobs.length; i++) { ?>
+                    <?!= include('tile-job', {'job': jobs[i]}) ?>
+                  <?}?>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

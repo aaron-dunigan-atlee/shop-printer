@@ -1,0 +1,34 @@
+<script>
+    $(document).ready(function () {
+
+        $('#main-body').bootstrapMaterialDesign();
+
+        switchNavbarToDark();
+
+        $('.btn-customized-light').click(function (event) {
+            event.preventDefault();
+            $('#main-body').addClass('light');
+            $('.main-menu-col .card').removeClass('bg-dark');
+            switchNavbarToLight();
+        });
+
+        $('.btn-customized-dark').click(function (event) {
+            event.preventDefault();
+            $('#main-body').removeClass('light');
+            $('.main-menu-col .card').addClass('bg-dark');
+            switchNavbarToDark();
+        });
+    });
+
+    function switchNavbarToDark() {
+        $('.navbar.navbar-light').css('background', '#333');
+        $('.navbar-toggler').css('color', '#ccc');
+        $('.navbar-toggler').css('border-color', '#ccc');
+    }
+
+    function switchNavbarToLight() {
+        $('.navbar.navbar-light').css('background', '#fff');
+        $('.navbar-toggler').css('color', '#6d6d6d');
+        $('.navbar-toggler').css('border-color', '#ccc');
+    }
+</script>

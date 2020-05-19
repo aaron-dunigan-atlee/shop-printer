@@ -1,0 +1,35 @@
+<?!= include('cabinet-list-css') ?>
+<?
+    var jobName = context.urlParams.job;
+    var cabinets = getCabinets(jobName);
+?>
+<div class="container-wrapper no-image">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card shadow-sm mt-sm-2 mt-md-5">
+                    <div class="card-body pb-md-0">
+                        <div class="row">
+                            <div class="col">
+                                <h2><b><?=jobName?></b></h2>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="card shadow-sm">
+                    <div class="card-body">
+
+                        <div id="tiles-container" class="row">
+                            <? for (var i=0; i<cabinets.length; i++) { ?>
+                              <?!= include('tile-cabinet', {'cabinet': cabinets[i]}) ?>
+                            <?}?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?!= include('cabinet-list-js') ?>

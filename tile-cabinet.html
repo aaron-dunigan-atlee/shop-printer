@@ -1,0 +1,22 @@
+<!-- 
+  Tile template to be filled and loaded by parent page. 
+  @params {Object} context.cabinet  A cabinet object
+-->
+<? var cabinet = context.cabinet ?>
+<div class="tile-container float-left p-1 <?= cabinet.labelPrinted ? 'printed' : '' ?>" style="overflow: hidden;">
+  <div class="card shop-numbers-tile shadow-lg" cabinet-id="<?=cabinet.id?>" cabinet-job="<?=cabinet.job?>" >
+      <div class="card-body py-1 pt-2 text-center cabinet-tile-title-container">
+          <div class="shop-numbers-tile__title"><b><?=cabinet.id?></b></div>
+      </div>
+      <hr class="m-0">
+      <div class="card-body py-0 h-100">
+          <p class="mt-2 shop-numbers-tile__description d-flex flex-grow-1 align-items-center my-0 mb-1 justify-content-center w-100">
+            <?=cabinet.cabinetName ?>
+          </p>
+          <hr class="m-0">
+          <p>
+            Qty: <?= cabinet.qty ?>
+          </p>
+      </div>
+  </div>
+</div>

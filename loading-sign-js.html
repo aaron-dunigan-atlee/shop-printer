@@ -1,0 +1,16 @@
+<script>
+loadingSign = '' +
+      '<div id="loading-sign-container" class="d-flex align-items-center justify-content-center" style="position: fixed; top: 0; bottom: 0; left: 0; right: 0; z-index: 9999">' +
+      '<div id="loading-sign-spinner" class="spinner-border " role="status"></div>' +
+      '</div>';
+
+  function showLoadingSign(color = 'green', backgroundColor = 'rgba(0,0,0,.7)') {
+      $('body').append(loadingSign);
+      $('#loading-sign-container').css('background-color', backgroundColor);
+      $('#loading-sign-spinner').css('color', color);
+  }
+
+  function hideLoadingSign() {
+      $('#loading-sign-container').remove();
+  }
+</script>

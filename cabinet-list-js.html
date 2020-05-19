@@ -1,0 +1,36 @@
+<script>
+    
+    function printLabel(tile) {
+        var parent = tile.parent()
+        var id = tile.attr('cabinet-id')
+        var job = tile.attr('cabinet-job')
+        showLoadingSign();
+        google.script.run
+          .withSuccessHandler(showPrintSuccess)
+          .withFailureHandler(showPrintError)
+          .withUserObject(parent)
+          .printCabinetLabelSlack(id, job)
+    }
+
+    function showPrintSuccess(x, parent) {
+      hideLoadingSign();
+      if (!parent.hasClass('printed')) {
+          parent.addClass('printed');
+        } 
+      alert("Label printed.")
+    }
+
+    function showPrintError(err) {
+      hideLoadingSign();
+      alert("Something went wrong. Please try again.")
+    }
+
+    $(document).ready(function () {
+        $('.shop-numbers-tile').click(function () {
+            printLabel($(this));
+        });
+
+
+    }); // document ready
+</script>
+
