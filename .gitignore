@@ -2,3 +2,6 @@
 secret.*
 slack*.*
 globals.js
+doGet.js
+onOpen.js
+error.html
